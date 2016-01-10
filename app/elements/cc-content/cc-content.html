@@ -62,18 +62,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       contentChanged: function(content){
-        var elem;
-        
-        if(content.type === 'image'){
-          elem = document.createElement('cc-content-image');
-          elem.content = content;
-        }else if(content.type === 'quote'){
-          elem = document.createElement('cc-content-quote');
-          elem.content = content;
-        }else{
-          elem = document.createElement('cc-content-quote');
-          elem.content = content;
-        }
+        var elem = document.createElement(content.data.renderer);
+        elem.content = content.data;
 
         this.$.container.appendChild(elem);
       }

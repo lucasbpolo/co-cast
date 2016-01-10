@@ -32,6 +32,17 @@
     if(!this.speed){
       this.speed = 10000;
     }
+
+    if(this.type === 'image'){
+      this.data = new ns.ContentImage(raw);
+    }else if(this.type === 'quote'){
+      this.data = new ns.ContentQuote(raw);
+    }else{
+      this.data = new ns.ContentQuote({
+        type: 'quote',
+        description: 'Unknown type'
+      });
+    }
   }
 
   ns.Content = Content;
