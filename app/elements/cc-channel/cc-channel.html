@@ -73,8 +73,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var $this = this;
         var contentsLength = this.channel.contents.length;
         
-
-
         if(visibility && contentsLength){
           this.removeAttribute('hidden');
 
@@ -87,12 +85,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               $this.set('channel.contents.'+ atualPosition +'.visibility', true);  
             }
           });
-
-          // setTimeout(function(){
-          //   $this.setAttribute('hidden', true);
-          //   $this.set('channel.visibility', false);  
-          //   $this.fire('channel.finished.rendering');
-          // }, 10000);
         }
       },
 

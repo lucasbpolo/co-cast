@@ -31,6 +31,10 @@
       });
     }
 
+    if(!this.visibility){
+      this.visibility = false;  
+    }
+
   }
 
   Channel.prototype.getStyles = function () {

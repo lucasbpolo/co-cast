@@ -20,6 +20,13 @@
     
     $.extend(this, raw);
 
+    if(!this.visibility){
+      this.visibility = false;  
+    }
+
+    if(!this.speed){
+      this.speed = 10000;
+    }
   }
 
   ns.Content = Content;

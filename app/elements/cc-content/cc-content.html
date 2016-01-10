@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             $this.setAttribute('hidden', true);
             $this.set('content.visibility', false);  
             $this.fire('content.finished.rendering');
-          }, 10000);
+          }, this.content.speed);
         }
       },
 

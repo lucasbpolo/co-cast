@@ -26,7 +26,6 @@
         ],
         channels: [
           {
-            visibility: false,
             styles: {
               backgroundColor: 'blue'
             },
@@ -34,19 +33,16 @@
             contents: [
               {
                 type: 'image',
-                visibility: false,
                 title: 'Mega da Virada pode render multa de R$ 8,5 milhões por publicidade ilegível',
                 src: 'http://cdn1.mundodastribos.com/2015/11/6-motivos-para-jogar-na-Mega-da-Virada-2016-04.jpg'
               },
               {
                 type: 'quote',
-                visibility: false,
                 description: 'Eu pensei que fosse algum problema no site quando vi a nota maior que 1.000.'
               }
             ]
           },
           {
-            visibility: false,
             styles: {
               backgroundColor: 'blue'
             },
@@ -54,13 +50,11 @@
             contents: [
               {
                 type: 'image',
-                visibility: false,
                 title: 'Obama apresenta medidas para reduzir violência com armas de fogo',
                 src: 'http://www.pravdanews.jex.com.br/includes/imagem.php?id_jornal=20207&id_noticia=5463'
               },
               {
                 type: 'quote',
-                visibility: false,
                 description: 'Se for verificado que houve a propaganda enganosa, a Caixa certamente será multada.'
               }
             ]
