@@ -1,0 +1,83 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="cc-content">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #FFF;
+      }
+    </style>
+    
+    <div id="container"></div>
+
+  </template>
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'cc-content',
+
+      properties: {
+        content: {
+          type: Array,
+          notify: true,
+          value: []
+        }
+      },
+
+      observers: [
+        'contentChanged(content)',
+        'visibilityChanged(content.visibility)'
+      ],
+
+      visibilityChanged: function(visibility){
+        var $this = this;
+
+        if(visibility){
+          this.removeAttribute('hidden');
+
+          setTimeout(function(){
+            $this.setAttribute('hidden', true);
+            $this.set('content.visibility', false);  
+            $this.fire('content.finished.rendering');
+          }, 10000);
+        }
+      },
+
+      contentChanged: function(content){
+        var elem;
+        
+        if(content.type === 'image'){
+          elem = document.createElement('cc-content-image');
+          elem.content = content;
+        }else if(content.type === 'quote'){
+          elem = document.createElement('cc-content-quote');
+          elem.content = content;
+        }else{
+          elem = document.createElement('cc-content-quote');
+          elem.content = content;
+        }
+
+        this.$.container.appendChild(elem);
+      }
+    });
+  })();
+  </script>
+</dom-module>
