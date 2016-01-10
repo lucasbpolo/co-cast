@@ -20,6 +20,11 @@
     
     $.extend(this, raw);
 
+    if(!this.type){
+      this.type = 'quote';
+      this.description = 'Type is mandatory';
+    }
+
     if(!this.visibility){
       this.visibility = false;  
     }

@@ -29,6 +29,14 @@
       $.each(this.channels, function(i, raw){
         self.channels[i] = new ns.Channel(raw);
       });
+    }else{
+      this.channels = [];
+      this.channels.push( new ns.Channel({
+        styles: {
+          backgroundColor: 'blue'
+        },
+        title: 'Title default model'
+      }) );
     }
 
   }

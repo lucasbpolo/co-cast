@@ -25,10 +25,20 @@
       this.type = 'channel';
     }
 
+    if(!this.title){
+      this.title = 'Title default model';
+    }
+
     if(this.contents){
       $.each(this.contents, function(i, raw){
         self.contents[i] = new ns.Content(raw);
       });
+    }else{
+      this.contents = [];
+      this.contents.push( new ns.Content({
+        type: 'quote',
+        description: 'Content default model'
+      }) );
     }
 
     if(!this.visibility){
