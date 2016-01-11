@@ -53,10 +53,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if(visibility){
           this.removeAttribute('hidden');
 
-          setTimeout(function(){
+          this.contentTimeout = setTimeout(function(){
             $this.setAttribute('hidden', true);
             $this.set('content.visibility', false);  
             $this.fire('content.finished.rendering');
+            $this.contentTimeout = undefined;
           }, this.content.speed);
         }
       },
@@ -66,6 +67,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         elem.content = content.data;
 
         this.$.container.appendChild(elem);
+      },
+
+      ready: function(){
+        var $this = this;
+
+        $(document).on('pause', function(){
+          if($this.contentTimeout){
+            clearTimeout($this.contentTimeout);  
+          }
+        });
+
+        $(document).on('play', function(){
+          if($this.contentTimeout){
+            $this.contentTimeout = setTimeout(function(){
+              $this.setAttribute('hidden', true);
+              $this.set('content.visibility', false);  
+              $this.fire('content.finished.rendering');
+              $this.contentTimeout = undefined;
+            }, $this.content.speed);
+          }
+        });
       }
     });
   })();
