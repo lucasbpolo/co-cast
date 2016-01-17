@@ -17,7 +17,15 @@
     function getStation() {
       var DATA = {
         styles: {
-          backgroundColor: 'red'
+          mnemonic: 'blue_pink2',
+          primaryColor: '#2196f3',
+          primaryFontColor: '#FFFFFF',
+          secondaryColor: '#64b5f6',
+          secondaryFontColor: '#000000',
+          accentColor: '#FF4081',
+          accentFontColor: '#FFFFFF',
+          primaryFont: 'Roboto',
+          secondaryFont: 'Roboto'
         },
         caption: [
           'Cólera mata 10 no maior campo de refugiados do mundo, no Quênia',
@@ -27,34 +35,94 @@
         channels: [
           {
             styles: {
-              backgroundColor: 'blue'
+              mnemonic: 'blue_pink2',
+              primaryColor: '#2196f3',
+              primaryFontColor: '#FFFFFF',
+              secondaryColor: '#64b5f6',
+              secondaryFontColor: '#000000',
+              accentColor: '#FF4081',
+              accentFontColor: '#FFFFFF',
+              primaryFont: 'Roboto',
+              secondaryFont: 'Roboto'
             },
             title: 'What\'s new',
             contents: [
               {
                 type: 'image',
+                styles: {
+                  mnemonic: 'blue_pink2',
+                  primaryColor: '#2196f3',
+                  primaryFontColor: '#FFFFFF',
+                  secondaryColor: '#64b5f6',
+                  secondaryFontColor: '#000000',
+                  accentColor: '#FF4081',
+                  accentFontColor: '#FFFFFF',
+                  primaryFont: 'Roboto',
+                  secondaryFont: 'Roboto'
+                },
                 title: 'Mega da Virada pode render multa de R$ 8,5 milhões por publicidade ilegível',
                 src: 'http://cdn1.mundodastribos.com/2015/11/6-motivos-para-jogar-na-Mega-da-Virada-2016-04.jpg'
               },
               {
                 type: 'quote',
+                styles: {
+                  mnemonic: 'blue_pink2',
+                  primaryColor: '#2196f3',
+                  primaryFontColor: '#FFFFFF',
+                  secondaryColor: '#64b5f6',
+                  secondaryFontColor: '#000000',
+                  accentColor: '#FF4081',
+                  accentFontColor: '#FFFFFF',
+                  primaryFont: 'Roboto',
+                  secondaryFont: 'Roboto'
+                },
                 description: 'Eu pensei que fosse algum problema no site quando vi a nota maior que 1.000.'
               }
             ]
           },
           {
             styles: {
-              backgroundColor: 'blue'
+              mnemonic: 'blue_pink2',
+              primaryColor: '#2196f3',
+              primaryFontColor: '#FFFFFF',
+              secondaryColor: '#64b5f6',
+              secondaryFontColor: '#000000',
+              accentColor: '#FF4081',
+              accentFontColor: '#FFFFFF',
+              primaryFont: 'Roboto',
+              secondaryFont: 'Roboto'
             },
             title: 'What\'s hot',
             contents: [
               {
                 type: 'image',
+                styles: {
+                  mnemonic: 'blue_pink2',
+                  primaryColor: '#2196f3',
+                  primaryFontColor: '#FFFFFF',
+                  secondaryColor: '#64b5f6',
+                  secondaryFontColor: '#000000',
+                  accentColor: '#FF4081',
+                  accentFontColor: '#FFFFFF',
+                  primaryFont: 'Roboto',
+                  secondaryFont: 'Roboto'
+                },
                 title: 'Obama apresenta medidas para reduzir violência com armas de fogo',
                 src: 'http://www.pravdanews.jex.com.br/includes/imagem.php?id_jornal=20207&id_noticia=5463'
               },
               {
                 type: 'quote',
+                styles: {
+                  mnemonic: 'blue_pink2',
+                  primaryColor: '#2196f3',
+                  primaryFontColor: '#FFFFFF',
+                  secondaryColor: '#64b5f6',
+                  secondaryFontColor: '#000000',
+                  accentColor: '#FF4081',
+                  accentFontColor: '#FFFFFF',
+                  primaryFont: 'Roboto',
+                  secondaryFont: 'Roboto'
+                },
                 description: 'Se for verificado que houve a propaganda enganosa, a Caixa certamente será multada.'
               }
             ]

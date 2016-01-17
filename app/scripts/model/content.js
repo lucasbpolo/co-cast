@@ -45,6 +45,10 @@
     }
   }
 
+  Content.prototype.getStyles = function () {
+    return this.styles;
+  };
+
   ns.Content = Content;
 
 }));

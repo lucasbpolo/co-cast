@@ -21,15 +21,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #617C8B;
+        background-color: var(--body-background-color, #617C8B);
       }
 
         .header{
-          font-size: 40px;
-          font-family: 'Roboto', 'Noto', sans-serif;
-          background-color: #EE452D;
-          color: #FFF;
-          font-weight: 400;
+          font-size: var(--header-font-size, 40px);
+          font-family: var(--header-font-family, 'Roboto Noto sans-serif');
+          background-color: var(--header-background-color, #EE452D);
+          color: var(--header-font-color, #FFF);
+          font-weight: var(--header-font-weight, 400);
           padding: 16px;
           box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
         }
@@ -72,6 +72,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       visibilityChanged: function(visibility){
         var $this = this;
         var contentsLength = this.channel.contents.length;
+        var styles = this.channel.getStyles();
+        
+        if(styles){
+          this.applyNewStyles(styles);  
+        }
         
         if(visibility && contentsLength){
           this.removeAttribute('hidden');
@@ -92,6 +97,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.addEventListener('content.finished.rendering', function(){
           this.carousel.loadNext();
         });
+      },
+
+      applyNewStyles: function(styles){
+        this.customStyle['--header-background-color'] = styles.secondaryColor;
+        this.customStyle['--body-background-color'] = styles.accentColor;
+        this.customStyle['--header-font-family'] = styles.primaryFont;
+        this.customStyle['--header-font-color'] = styles.secondaryFontColor;
+        this.customStyle['--header-font-size'] = '40px';
+        this.customStyle['--header-font-weight'] = '400';
+        
+        this.updateStyles();
       }
     });
   })();

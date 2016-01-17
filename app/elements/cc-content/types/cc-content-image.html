@@ -27,8 +27,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         .box{
           position: absolute;
-          background-color: #FFF;
-          color: #000;
+          background-color: var(--box-background-color, #FFF);
+          color: var(--var-font-color, #000);
           top: 0;
           right: 0;
           bottom: 0;
@@ -70,8 +70,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: Array,
           notify: true,
           value: []
+        },
+        styles: {
+          type: Object,
+          notify: true,
+          value: {}
         }
+      },
+
+      attached: function(){
+        this.applyNewStyles(this.styles);
+      },
+
+      applyNewStyles: function(styles){
+        this.customStyle['--box-background-color'] = styles.accentColor;
+        this.customStyle['--var-font-color'] = styles.accentFontColor;
+        
+        this.updateStyles();
       }
+
     });
   })();
   </script>

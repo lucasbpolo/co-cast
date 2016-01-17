@@ -65,6 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       contentChanged: function(content){
         var elem = document.createElement(content.data.renderer);
         elem.content = content.data;
+        elem.styles = content.getStyles();
 
         this.$.container.appendChild(elem);
       },

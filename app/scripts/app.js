@@ -22,7 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       loading.visibility = true;
 
       api.getStation().then(function(model){
-
+        station.styles = model.getStyles();
         station.channels = model.getChannels();
         station.caption = model.getCaption();
 
