@@ -8,13 +8,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 (function() {
-    var app = document.querySelector('#app');
+    // var app = document.querySelector('#app');
     
-    app.addEventListener('dom-change', function() {
-      loadData();
-    });
+    // app.addEventListener('dom-change', loadData);
 
-    function loadData(){
+    $(document).on('firebase-changed', function(){
       var loading = document.querySelector('#loading');
       var station = document.querySelector('#station');
       var api = new CoCast.Api.Station();
@@ -29,8 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // COLOCAR NO CALLBACK DO LOAD DA STATION
         loading.visibility = false;
       });
-    }
+      
+    });
   
+
+    
 
 
 

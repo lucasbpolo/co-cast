@@ -53,7 +53,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
 
     </style>
-    
+
+    <firebase-collection
+      location="https://brilliant-inferno-3469.firebaseio.com"
+      on-firebase-value="firebaseChanged"></firebase-collection>
+
     <div class="content">
       <template is="dom-repeat" items="{{channels}}">
         <cc-channel class="channel" channel="{{item}}" hidden></cc-channel>
@@ -101,6 +105,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         'channelsChanged(channels)'
       ],
 
+      firebaseChanged: function(){
+        $(document).trigger('firebase-changed');
+      },
+
       channelsChanged: function(channels){
         var $this = this;
         var channelsLength = channels.length;
@@ -126,7 +134,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.customStyle['--caption-background-color'] = styles.primaryColor;
         this.customStyle['--caption-text-color'] = styles.primaryFontColor;
         this.customStyle['--marquee-font-size'] = '40px';
-        
+
         this.updateStyles();
       }
     });
