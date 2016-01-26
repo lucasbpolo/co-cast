@@ -23,7 +23,7 @@ var glob = require('glob');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
-var polybuild = require('polybuild');
+// var polybuild = require('polybuild');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -169,10 +169,21 @@ gulp.task('html', function () {
 
 // Polybuild will take care of inlining HTML imports,
 // scripts and CSS for you.
+// gulp.task('vulcanize', function () {
+//   return gulp.src('dist/index.html')
+//     .pipe(polybuild({maximumCrush: true}))
+//     .pipe(gulp.dest('dist/'));
+// });
 gulp.task('vulcanize', function () {
-  return gulp.src('dist/index.html')
-    .pipe(polybuild({maximumCrush: true}))
-    .pipe(gulp.dest('dist/'));
+  var DEST_DIR = 'dist/elements';
+  return gulp.src('dist/elements/elements.vulcanized.html')
+    .pipe($.vulcanize({
+      stripComments: true,
+      inlineCss: true,
+      inlineScripts: true
+    }))
+    .pipe(gulp.dest(DEST_DIR))
+    .pipe($.size({title: 'vulcanize'}));
 });
 
 // If you require more granular configuration of Vulcanize
